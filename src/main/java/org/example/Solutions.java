@@ -1,9 +1,8 @@
-package org.example.solutions;
+package org.example;
 
-import java.util.Arrays;
-
-import org.example.IProblemSolver;
-import org.example.ProblemGen;
+import org.example.problem.IProblemSolver;
+import org.example.problem.ProblemGen;
+import org.example.solutions.SolutionNaive;
 
 public class Solutions {
 
@@ -13,11 +12,11 @@ public class Solutions {
 		
 		IProblemSolver naive = new SolutionNaive();
 		
-		for(int i=0;i<20;i++) {
-			problemGen.genRandomProblem(10000000); 
+		for(int i=0;i<100;i++) {
+			problemGen.genRandomProblem(10000);
 //			System.out.println(Arrays.toString(problemGen.getData()));
 			long start = System.currentTimeMillis(); //acá no está haciendo el warm up para empezar con el benchmarking!!
-			System.out.println(" -- Pairs: "+naive.isSumIn(problemGen.getData(), (int)(Math.random() * 2 * Integer.MAX_VALUE + Integer.MIN_VALUE/2)).size());
+			System.out.println(" -- Pairs: " + naive.isSumIn(problemGen.getData(), (int)(Math.random() * 2 * Integer.MAX_VALUE + Integer.MIN_VALUE/2)).size());
 			start = System.currentTimeMillis() - start;
 			System.out.println(start);
 		}

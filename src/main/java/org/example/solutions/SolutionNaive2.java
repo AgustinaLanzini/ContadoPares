@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import org.example.IProblemSolver;
+import org.example.problem.IProblemSolver;
 
 public class SolutionNaive2 implements IProblemSolver{
 

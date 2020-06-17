@@ -3,7 +3,7 @@ package org.example.solutions;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.example.IProblemSolver;
+import org.example.problem.IProblemSolver;
 
 public class SolutionNaive implements IProblemSolver{
 
