@@ -1,1 +1,7 @@
-edu\unicen\tallerjava\Main.class
+org\example\solutions\SolutionNaive.class
+org\example\ContadorPares.class
+org\example\IProblemSolver$Pair.class
+org\example\IProblemSolver.class
+org\example\solutions\Solutions.class
+org\example\ProblemGen.class
+org\example\solutions\SolutionNaive2.class
