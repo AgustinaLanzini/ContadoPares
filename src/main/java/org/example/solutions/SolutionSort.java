@@ -18,5 +18,6 @@ public class SolutionSort implements IProblemSolver {
             if (Arrays.binarySearch(data, sum-data[i]) > 0)
                 pairs.add(new Pair(data[i], sum-data[i]));
         }
+        return pairs;
     }
 }
