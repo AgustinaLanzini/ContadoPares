@@ -7,6 +7,7 @@ import org.example.problem.IProblemSolver;
 
 public class SolutionNaive implements IProblemSolver{
 
+    @Override
 	public List<Pair> isSumIn(int[] data, int sum) {
 		
 		List<Pair> pairs = new ArrayList<>();
