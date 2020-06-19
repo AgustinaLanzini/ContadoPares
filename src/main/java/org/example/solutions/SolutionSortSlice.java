@@ -17,7 +17,7 @@ public class SolutionSortSlice implements IProblemSolver {
         if (sum >= 0 ) {
             int last = Arrays.binarySearch(data, sum - data[0]);
             if (last < 0){
-                last = -last;
+                last = -last-1;
             }
             int it = last + 1;
             while ((it < data.length) && (data[it] == data[last])) {
