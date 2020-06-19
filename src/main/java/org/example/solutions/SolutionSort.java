@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//Si sum es positivo puedo descargar la parte del arreglo mayor a ese numero para chequear
 public class SolutionSort implements IProblemSolver {
 
     @Override

@@ -25,7 +25,7 @@ public class testSolutionSortSlice {
     @Before
     public void setup() {
 
-        arr1 = new int[]{1, 5, 7, -1};
+        arr1 = new int[]{1, 5, 7, -1}; //-1, 1, 5, 7
         arr2 = new int[]{1, 5, 7, -1, 5};
         arr3 = new int[]{1, 1, 1, 1};
         arr4 = new int[]{10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1}; //-1, 1, 1, 1, 2, 4, 5, 6, 7, 10, 10, 12

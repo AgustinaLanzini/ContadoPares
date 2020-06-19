@@ -15,27 +15,35 @@ public class SolutionSortSlice implements IProblemSolver {
 
         Arrays.sort(data);
         if (sum >= 0 ) {
-            int last = Arrays.binarySearch(data, sum - data[0]);
+        	System.out.println("Busco: " + (sum - data[0]));
+            int last = Arrays.binarySearch(data, 1, data.length, (sum - data[0]));
             if (last < 0){
-                last = -last-1;
+                last = -last; //índice anterior a donde debería encontrarse el valor, por lo tanto es el menor más proximo
+                System.out.println("El menor más proximo: " + data[last]);
             }
-            int it = last + 1;
-            while ((it < data.length) && (data[it] == data[last])) {
-                last = it;
-                it++;
+            else {
+            	//busco repetidos
+            	System.out.println("Busco repetidos de " + data[last]);
+	            int it = last + 1; 
+	            while ((it < data.length) && (data[it] == data[last])) {
+	                it++;
+	            }
+	            last = it-1; //ultimo repetido o fin del arreglo
+	            System.out.println("Ultimo repetido: " + last);
             }
             for (int i = 0; i < last ; i++) {
-                int[] slice = Arrays.copyOfRange(data, i + 1, last+1);
-                int position = Arrays.binarySearch(slice, sum - data[i]);
-                if (position >= 0) {
+            	System.out.println("Primero del corte: " + data[i+1] + " Ultimo: " + data[last]);
+                System.out.println("Con: " + data[i] );
+                int position = Arrays.binarySearch(data, i+1, last+1, sum - data[i]);
+                if (position >= 0){
                     pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                     int j = position + 1;
-                    while ((j < slice.length) && (slice[j] == slice[position])) {
+                    while ((j < data.length) && (j > i) && (data[j] == data[position])) {
                         pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                         j++;
                     }
                     j = position - 1;
-                    while ((j >= 0) && (j < slice.length) && (slice[j] == slice[position])) {
+                    while ((j >= 0) && (j > i) && (data[j] == data[position])) {
                         pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                         j--;
                     }
@@ -43,27 +51,32 @@ public class SolutionSortSlice implements IProblemSolver {
             }
         }
         else {
-            int first = Arrays.binarySearch(data, sum - data[data.length-1]);
+        	System.out.println("Busco: " + (sum - data[data.length-1]));
+            int first = Arrays.binarySearch(data, 0, data[data.length-2], sum - data[data.length-1]); 
             if (first < 0){
-                first = -first -1;
+                first = -first -1; //posición donde debería estar (elemento mayor al buscado)
+                System.out.println("El mayor más proximo: " + data[first]);
             }
-            int it = first - 1;
-            while ((it >= 0) && (data[it] == data[first])) {
-                first = it;
-                it--;
+            else {
+            	//busco repetidos
+            	System.out.println("Busco repetidos de " + data[first]);
+	            int it = first - 1;
+	            while ((it >= 0) && (data[it] == data[first])) {
+	                it--;
+	            }
+	            first = it +1;
             }
             for (int i = data.length-1; i > first; i--) {
-                int[] slice = Arrays.copyOfRange(data, first, i-1);
-                int position = Arrays.binarySearch(slice, sum - data[i]);
+                int position = Arrays.binarySearch(data, first, i-1, sum - data[i]);
                 if (position >= 0) {
                     pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                     int j = position + 1;
-                    while ((j < slice.length) && (slice[j] == slice[position])) {
+                    while ((j < data.length) && (j < i) && (data[j] == data[position])) {
                         pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                         j++;
                     }
                     j = position - 1;
-                    while ((j >= 0) && (j < slice.length) && (slice[j] == slice[position])) {
+                    while ((j >= 0) && (j < i) && (data[j] == data[position])) {
                         pairs.add(new IProblemSolver.Pair(data[i], sum - data[i]));
                         j--;
                     }
