@@ -11,10 +11,12 @@ public class testSolutionSort {
     int[] arr2;
     int[] arr3;
     int[] arr4;
+    int[] arr5;
     int target1;
     int target2;
     int target3;
     int target4;
+    int target5;
     IProblemSolver naive;
 
     @Before
@@ -24,11 +26,13 @@ public class testSolutionSort {
         arr2 = new int[]{1, 5, 7, -1, 5};
         arr3 = new int[]{1, 1, 1, 1};
         arr4 = new int[]{10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1};
+        arr5 = new int[]{-3,-2,-5,-10,-20,-13,0,7,12};
 
         target1 = 6;
         target2 = 6;
         target3 = 2;
         target4 = 11;
+        target5 = -13;
 
         naive = new SolutionSort();
     }
@@ -52,6 +56,11 @@ public class testSolutionSort {
     public void testSolution4() {
         naive.isSumIn(arr4, target4).forEach(System.out::print);
         assertEquals(9, naive.isSumIn(arr4, target4).size());
+    }
+    @Test
+    public void testSolution5() {
+        naive.isSumIn(arr5, target5).forEach(System.out::print);
+        assertEquals(3, naive.isSumIn(arr5, target5).size());
     }
 
 
