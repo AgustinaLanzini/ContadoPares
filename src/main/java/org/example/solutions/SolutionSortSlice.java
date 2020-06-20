@@ -14,7 +14,7 @@ public class SolutionSortSlice implements IProblemSolver {
         List<IProblemSolver.Pair> pairs = new ArrayList<>();
 
         Arrays.sort(data);
-        if (sum >= 0 ) {
+        if (sum > 0 ) {
         	//System.out.println("Busco: " + (sum - data[0]));
             int last = Arrays.binarySearch(data, 1, data.length, (sum - data[0]));
             if (last < 0){
