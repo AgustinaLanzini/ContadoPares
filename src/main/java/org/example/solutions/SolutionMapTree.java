@@ -4,30 +4,14 @@ import org.example.problem.IProblemSolver;
 
 import java.util.*;
 
-public class SolutionMap implements IProblemSolver {
+public class SolutionMapTree implements IProblemSolver {
 
     @Override
     public List<Pair> isSumIn(int[] data, int sum) {
 
-        List<IProblemSolver.Pair> pairs = new ArrayList<>();
+        List<Pair> pairs = new ArrayList<>();
         Map<Integer, Integer> integerMap = new TreeMap<>();
-        Arrays.sort(data);
 
-        Integer actual = data[0];
-        Integer counter = 1;
-        int pos=1;
-        while ( pos < data.length){
-            if (data[pos] == actual)
-                counter++;
-            else{
-                integerMap.put(actual, counter);
-                actual = data[pos];
-                counter=1;
-            }
-            pos++;
-        }
-        integerMap.put(actual, counter);
-        /*long start = System.currentTimeMillis();
         for (int i=0; i< data.length; i++){
             Integer value = integerMap.get(data[i]);
             //No deberían haber keys con null
@@ -37,16 +21,15 @@ public class SolutionMap implements IProblemSolver {
             else
                 integerMap.put(data[i], 1);
         }
-        start = System.currentTimeMillis() - start;
-        System.out.println("Lo que en tarda en pasa de array a map: " + start);
-        */
-        long start = System.currentTimeMillis();
+
+
+
         integerMap.forEach( (k, v) -> {         int find = sum- k;
                                                 if (k > find) {
                                                     Integer times = integerMap.get(find);
                                                     if (times != null){
                                                         for (int i=1; i<= times*v; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, find));
+                                                            pairs.add(new Pair(k, find));
                                                     }
                                                 }
                                                 else
@@ -56,11 +39,10 @@ public class SolutionMap implements IProblemSolver {
                                                             times = times+v-1;
                                                         }
                                                         for (int i = 1; i <= times; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, find));
+                                                            pairs.add(new Pair(k, find));
                                                     }
+
         });
-        start = System.currentTimeMillis() - start;
-        System.out.println("Lo que en verdad tarda: " + start);
         return pairs;
     }
 }

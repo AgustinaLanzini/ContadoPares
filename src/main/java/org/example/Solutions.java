@@ -10,7 +10,7 @@ public class Solutions {
 		
 		ProblemGen problemGen = new ProblemGen();
 		
-		IProblemSolver naive = new SolutionSortSlice2();
+		IProblemSolver naive = new SolutionMap();
 
 		for(int i=0;i<100;i++) {
 			problemGen.genRandomProblem(10000000);
