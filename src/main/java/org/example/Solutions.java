@@ -10,10 +10,10 @@ public class Solutions {
 		
 		ProblemGen problemGen = new ProblemGen();
 		
-		IProblemSolver naive = new SolutionMap();
+		IProblemSolver naive = new SolutionMapComplement();
 
 		for(int i=0;i<100;i++) {
-			problemGen.genRandomProblem(10000000);
+			problemGen.genRandomProblem(1000000);
 //			System.out.println(Arrays.toString(problemGen.getData()));
 			long start = System.currentTimeMillis(); //acá no está haciendo el warm up para empezar con el benchmarking!!
 			System.out.println(" -- Pairs: " + naive.isSumIn(problemGen.getData(), (int)(Math.random() * 2 * Integer.MAX_VALUE + Integer.MIN_VALUE/2)).size());

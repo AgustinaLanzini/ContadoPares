@@ -7,7 +7,7 @@ public class testSolutionMapComplement extends testSolution{
 	
 	@Before
 	public void setupMapComplement() {
-    	solver = new SolutionMap();
+    	solver = new SolutionMapComplement();
 	}
 	
     @Test
