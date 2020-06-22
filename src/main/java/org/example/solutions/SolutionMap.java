@@ -13,20 +13,22 @@ public class SolutionMap implements IProblemSolver {
         Map<Integer, Integer> integerMap = new TreeMap<>();
         Arrays.sort(data);
 
-        Integer actual = data[0];
-        Integer counter = 1;
-        int pos=1;
+        int actual = data[0];
+        int counter = 0;
+        int pos=0;
         while ( pos < data.length){
-            if (data[pos] == actual)
-                counter++;
-            else{
+            counter++;
+            if ((pos == data.length-1) || (data[pos+1] != actual)){
                 integerMap.put(actual, counter);
-                actual = data[pos];
-                counter=1;
+                if (pos != data.length-1){
+                    actual = data[pos+1];
+                    counter=0;
+                }
             }
             pos++;
         }
-        integerMap.put(actual, counter);
+
+
         /*long start = System.currentTimeMillis();
         for (int i=0; i< data.length; i++){
             Integer value = integerMap.get(data[i]);

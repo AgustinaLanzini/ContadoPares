@@ -18,21 +18,21 @@ public class SolutionMapComplement implements IProblemSolver {
         int pos=0;
         int lastAdded = data[data.length-1];
         boolean adding = true;
-        while ((pos < data.length)) { //&& (adding |	 (data[pos] <= (sum - lastAdded)))){ //  && !empty){
+        while (pos < data.length) { //&& (adding |	 (data[pos] <= (sum - lastAdded)))){ //  && !empty){
         	counter++;
         	if ((pos == data.length-1) || (data[pos+1] != actual)){
             	if (actual != (float) sum/2){
-	            	Integer value = integerMap.get(sum - actual);
-	                if (value != null) {
-	                	for (int i=1; i<= value*counter; i++)
-	                        pairs.add(new IProblemSolver.Pair(actual, sum - actual));
-	                	adding = false;
-	                }
-	                else {
-	                	integerMap.put(actual, counter);
-	                	lastAdded=actual;
-	                }
-            	}
+                    Integer value = integerMap.get(sum - actual);
+                    if (value != null) {
+                        for (int i=1; i<= value*counter; i++)
+                            pairs.add(new IProblemSolver.Pair(actual, sum - actual));
+                        adding = false;
+                    }
+                    else {
+                        integerMap.put(actual, counter);
+                        lastAdded=actual;
+                    }
+                }
             	else {
             		int times = 0;
                     for (int i=2; i<counter; i++){
