@@ -16,8 +16,8 @@ public class SolutionMapComplement implements IProblemSolver {
         int actual = data[0];
         int counter = 0;
         int pos=0;
-        int lastAdded = data[data.length-1];
-        boolean adding = true;
+        //int lastAdded = data[data.length-1];
+        //boolean adding = true;
         while (pos < data.length) { //&& (adding |	 (data[pos] <= (sum - lastAdded)))){ //  && !empty){
         	counter++;
         	if ((pos == data.length-1) || (data[pos+1] != actual)){
@@ -26,11 +26,11 @@ public class SolutionMapComplement implements IProblemSolver {
                     if (value != null) {
                         for (int i=1; i<= value*counter; i++)
                             pairs.add(new IProblemSolver.Pair(actual, sum - actual));
-                        adding = false;
+                        //adding = false;
                     }
                     else {
                         integerMap.put(actual, counter);
-                        lastAdded=actual;
+                        //lastAdded=actual;
                     }
                 }
             	else {
@@ -39,7 +39,7 @@ public class SolutionMapComplement implements IProblemSolver {
                         times = times+counter-1;
                     }
                     for (int i = 1; i <= times; i++)
-                        pairs.add(new IProblemSolver.Pair(actual,counter));
+                        pairs.add(new IProblemSolver.Pair(actual,actual));
             		}
             	if (!(pos == data.length-1)) {
                     actual = data[pos+1];
