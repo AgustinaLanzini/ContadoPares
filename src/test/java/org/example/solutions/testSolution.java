@@ -59,7 +59,6 @@ public class testSolution {
 	    }
 
 	    public void testExample(IProblemSolver solver, int[] arr, int target, int solution) {
-	    	solver.isSumIn(arr, target).forEach(System.out::println);
 	        assertEquals(solution, solver.isSumIn(arr, target).size());
 	    }
 	    

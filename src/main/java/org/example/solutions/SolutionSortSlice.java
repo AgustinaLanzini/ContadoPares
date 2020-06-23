@@ -18,15 +18,15 @@ public class SolutionSortSlice implements IProblemSolver {
             int last = data.length-1;
             for (int i = 0; i < last ; i++) {
                 int position = Arrays.binarySearch(data, i+1, last+1, sum - data[i]);
-                if (position > 0){
+                if (position >= 0){
                     pairs.add(new Pair(data[i], sum - data[i]));
                     int j = position - 1;
-                    while ((j >= 0) && (j > i) && (data[j] == data[position])) {
+                    while ((j > i) && (data[j] == data[position])) {
                         pairs.add(new Pair(data[i], sum - data[i]));
                         j--;
                     }
                     j = position + 1;
-                    while ((j < data.length) && (j > i) && (data[j] == data[position])) {
+                    while ((j < data.length) && (data[j] == data[position])) {
                         pairs.add(new Pair(data[i], sum - data[i]));
                         j++;
                     }
@@ -41,12 +41,12 @@ public class SolutionSortSlice implements IProblemSolver {
                 if (position >= 0) {
                     pairs.add(new Pair(data[i], sum - data[i]));
                     int j = position + 1;
-                    while ((j < data.length) && (j < i) && (data[j] == data[position])) {
+                    while ((j < i) && (data[j] == data[position])) {
                         pairs.add(new Pair(data[i], sum - data[i]));
                         j++;
                     }
                     j = position - 1;
-                    while ((j >= 0) && (j < i) && (data[j] == data[position])) {
+                    while ((j >= 0) && (data[j] == data[position])) {
                         pairs.add(new Pair(data[i], sum - data[i]));
                         j--;
                     }

@@ -10,10 +10,10 @@ public class Solutions {
 		
 		ProblemGen problemGen = new ProblemGen();
 		
-		IProblemSolver naive = new SolutionMap3();
+		IProblemSolver naive = new SolutionSortSlice();
 
 		for(int i=0;i<100;i++) {
-			problemGen.genRandomProblem(100000000);
+			problemGen.genRandomProblem(10000000);
 			long start = System.currentTimeMillis();
 			System.out.println(" -- Pairs: " + naive.isSumIn(problemGen.getData(), (int)(Math.random() * 2 * Integer.MAX_VALUE + Integer.MIN_VALUE/2)).size());
 			start = System.currentTimeMillis() - start;

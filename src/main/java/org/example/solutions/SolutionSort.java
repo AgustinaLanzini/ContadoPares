@@ -15,17 +15,16 @@ public class SolutionSort implements IProblemSolver {
 
         Arrays.sort(data);
         for (int i=0; i<data.length-1;i++){
-            int[] slice = Arrays.copyOfRange(data,i+1, data.length);
-            int position = Arrays.binarySearch(slice, sum-data[i]);
+            int position = Arrays.binarySearch(data, i+1, data.length, sum-data[i]);
             if (position >= 0){
                 pairs.add(new Pair(data[i], sum-data[i]));
                 int j = position+1;
-                while ((j<slice.length) && (slice[j] == slice[position])) {
+                while ((j<data.length) && (data[j] == data[position])) {
                     pairs.add(new Pair(data[i], sum - data[i]));
                     j++;
                 }
                 j = position-1;
-                while ((j >= 0) && (slice[j] == slice[position])){
+                while ((j > i) && (data[j] == data[position])){
                     pairs.add(new Pair(data[i], sum - data[i]));
                     j--;
                 }
