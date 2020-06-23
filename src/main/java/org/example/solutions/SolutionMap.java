@@ -42,22 +42,22 @@ public class SolutionMap implements IProblemSolver {
         start = System.currentTimeMillis() - start;
         System.out.println("Lo que en tarda en pasa de array a map: " + start);
         */
-        integerMap.forEach( (k, v) -> {         int find = sum- k;
-                                                if (k > find) {
-                                                    Integer times = integerMap.get(find);
+        integerMap.forEach( (k, v) -> {         //int find = sum- k;
+                                                if (k > sum- k) {
+                                                    Integer times = integerMap.get(sum- k);
                                                     if (times != null){
                                                         for (int i=1; i<= times*v; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, find));
+                                                            pairs.add(new IProblemSolver.Pair(k, sum- k));
                                                     }
                                                 }
                                                 else
-                                                    if (k == find) {
+                                                    if (k == sum- k) {
                                                         Integer times = 0;
                                                         for (int i=2; i<v; i++){
                                                             times = times+v-1;
                                                         }
                                                         for (int i = 1; i <= times; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, find));
+                                                            pairs.add(new IProblemSolver.Pair(k, sum- k));
                                                     }
         });
         return pairs;

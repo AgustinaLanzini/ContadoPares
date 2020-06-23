@@ -49,49 +49,24 @@ public class SolutionMap2 implements IProblemSolver {
             }
         }
 
-        /*
-        List<Map.Entry> entries = new ArrayList<>();
-        Iterator<Map.Entry> it = entries.iterator();
-        boolean duplicated = false;
-        for ((it != null) && !duplicated){
-            int find = sum - ;
-            if (k > find) {
-                Integer times = integerMap.get(find);
-                if (times != null){
-                    for (int i=1; i<= times*v; i++)
-                        pairs.add(new Pair(k, find));
-                }
-            }
-            else
-                if (k == find) {
-                    Integer times = 0;
-                    for (int i=2; i<v; i++){
-                        times = times+v-1;
-                    }
-                    for (int i = 1; i <= times; i++)
-                        pairs.add(new Pair(k, find));
-                }
-                else
-                    duplicated = true;
-        }
-
-        */
-        integerMap.forEach( (k, v) -> {         int find = sum- k;
-                                                if (k > find) {
-                                                    Integer times = integerMap.get(find);
+        integerMap.forEach( (k, v) -> {         //int find = sum- k;
+                                                if (k > sum - k) {
+                                                    Integer times = integerMap.get(sum- k);
                                                     if (times != null){
                                                         for (int i=1; i<= times*v; i++)
-                                                            pairs.add(new Pair(k, find));
+                                                            pairs.add(new Pair(k, sum- k));
                                                     }
                                                 }
                                                 else
-                                                    if (k == find) {
-                                                        Integer times = 0;
+                                                    if (k == sum - k) {
+                                                        int times = v*(v-1)/2;
+
+                                                        /*Integer times = 0;
                                                         for (int i=2; i<v; i++){
                                                             times = times+v-1;
-                                                        }
+                                                        }*/
                                                         for (int i = 1; i <= times; i++)
-                                                            pairs.add(new Pair(k, find));
+                                                            pairs.add(new Pair(k, sum- k));
                                                     }
         });
 
