@@ -1,5 +1,7 @@
 org\example\solutions\testSolutionMapComplement.class
 org\example\solutions\testSolutionSort.class
+org\example\solutions\testSolutionMapComplement2.class
+org\example\solutions\testSolutionMap3.class
 org\example\solutions\testSolutionSortSlice.class
 org\example\solutions\testSolutionMap.class
 org\example\solutions\testSolutionNaive.class
