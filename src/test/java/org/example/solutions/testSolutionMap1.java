@@ -3,41 +3,41 @@ package org.example.solutions;
 import org.junit.Before;
 import org.junit.Test;
 
-public class testSolutionMapComplement2 extends testSolution{
+public class testSolutionMap1 extends testSolution{
 	
 	@Before
-	public void setupMapComplement() {
-    	solver = new SolutionMapComplement2();
+	public void setupMap() {
+    	solver = new SolutionMap1();
 	}
 	
     @Test
-    public void testSolutionMapComplement1() {
+    public void testSolutionMap1() {
     	testExample(solver, arr1, target1, solution1);    	
     	
     }
     
     @Test
-    public void testSolutionMapComplement2() {
+    public void testSolutionMap2() {
     	testExample(solver, arr2, target2, solution2);
     }
     
     @Test
-    public void testSolutionMapComplement3() {
+    public void testSolutionMap3() {
     	testExample(solver, arr3, target3, solution3);
     }
     
     @Test
-    public void testSolutionMapComplement4() {
+    public void testSolutionMap4() {
     	testExample(solver, arr4, target4, solution4);
     }
     
     @Test
-    public void testSolutionMapComplement5() {
+    public void testSolutionMap5() {
     	testExample(solver, arr5, target5, solution5);
     }
     
     @Test
-    public void testSolutionMapComplement6() {
+    public void testSolutionMap6() {
     	testExample(solver, arr6, target6, solution6);
     }
 }

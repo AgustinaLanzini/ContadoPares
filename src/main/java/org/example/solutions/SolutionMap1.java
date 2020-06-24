@@ -4,7 +4,7 @@ import org.example.problem.IProblemSolver;
 
 import java.util.*;
 
-public class SolutionMap implements IProblemSolver {
+public class SolutionMap1 implements IProblemSolver {
 
     @Override
     public List<Pair> isSumIn(int[] data, int sum) {

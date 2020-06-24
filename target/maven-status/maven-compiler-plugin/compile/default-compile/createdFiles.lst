@@ -1,4 +1,5 @@
 org\example\ContadorPares.class
+org\example\solutions\SolutionMapNaive.class
 org\example\solutions\SolutionSortSlice.class
 org\example\solutions\SolutionMapComplement2.class
 org\example\solutions\SolutionMap3.class

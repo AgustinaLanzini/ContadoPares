@@ -3,11 +3,11 @@ package org.example.solutions;
 import org.junit.Before;
 import org.junit.Test;
 
-public class testSolutionMap extends testSolution{
+public class testSolutionMapNaive extends testSolution{
 	
 	@Before
 	public void setupMap() {
-    	solver = new SolutionMap();
+    	solver = new SolutionMapNaive();
 	}
 	
     @Test
