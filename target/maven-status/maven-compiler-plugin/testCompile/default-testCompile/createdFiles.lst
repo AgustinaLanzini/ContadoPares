@@ -1,11 +1,9 @@
-org\example\solutions\testSolutionMapComplement.class
+org\example\solutions\testSolutionMapNaive.class
 org\example\solutions\testSolutionSort.class
-org\example\solutions\testSolutionMapComplement2.class
+org\example\solutions\testSolutionMap1.class
 org\example\solutions\testSolutionMap3.class
 org\example\solutions\testSolutionSortSlice.class
-org\example\solutions\testSolutionMap.class
 org\example\solutions\testSolutionNaive.class
 org\example\solutions\testSolution.class
-org\example\testContadorPares.class
 org\example\solutions\testSolutionMap2.class
 org\example\solutions\testSolutionNaive2.class
