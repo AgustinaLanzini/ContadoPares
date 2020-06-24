@@ -49,8 +49,7 @@ public class SolutionMap2 implements IProblemSolver {
             }
         }
 
-        integerMap.forEach( (k, v) -> {         //int find = sum- k;
-                                                if (k > sum - k) {
+        integerMap.forEach( (k, v) -> {         if (k > sum - k) {
                                                     Integer times = integerMap.get(sum- k);
                                                     if (times != null){
                                                         for (int i=1; i<= times*v; i++)
@@ -60,11 +59,6 @@ public class SolutionMap2 implements IProblemSolver {
                                                 else
                                                     if (k == sum - k) {
                                                         int times = v*(v-1)/2;
-
-                                                        /*Integer times = 0;
-                                                        for (int i=2; i<v; i++){
-                                                            times = times+v-1;
-                                                        }*/
                                                         for (int i = 1; i <= times; i++)
                                                             pairs.add(new Pair(k, sum- k));
                                                     }

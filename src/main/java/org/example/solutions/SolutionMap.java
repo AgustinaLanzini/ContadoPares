@@ -28,36 +28,18 @@ public class SolutionMap implements IProblemSolver {
             pos++;
         }
 
-
-        /*long start = System.currentTimeMillis();
-        for (int i=0; i< data.length; i++){
-            Integer value = integerMap.get(data[i]);
-            //No deberían haber keys con null
-            if (value != null){
-                integerMap.put(data[i], value+1);
-            }
-            else
-                integerMap.put(data[i], 1);
-        }
-        start = System.currentTimeMillis() - start;
-        System.out.println("Lo que en tarda en pasa de array a map: " + start);
-        */
-        integerMap.forEach( (k, v) -> {         //int find = sum- k;
-                                                if (k > sum- k) {
+        integerMap.forEach( (k, v) -> {         if (k > sum- k) {
                                                     Integer times = integerMap.get(sum- k);
                                                     if (times != null){
                                                         for (int i=1; i<= times*v; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, sum- k));
+                                                            pairs.add(new Pair(k, sum- k));
                                                     }
                                                 }
                                                 else
                                                     if (k == sum- k) {
-                                                        Integer times = 0;
-                                                        for (int i=2; i<v; i++){
-                                                            times = times+v-1;
-                                                        }
+                                                        int times = v*(v-1)/2;
                                                         for (int i = 1; i <= times; i++)
-                                                            pairs.add(new IProblemSolver.Pair(k, sum- k));
+                                                            pairs.add(new Pair(k, sum- k));
                                                     }
         });
         return pairs;
